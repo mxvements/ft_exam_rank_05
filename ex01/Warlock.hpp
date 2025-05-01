@@ -3,11 +3,15 @@
 
 # include <string>
 # include <iostream>
+#include "Fwoosh.hpp"
+#include "Dummy.hpp"
 
 class Warlock {
     private:
         std::string _name;
         std::string _title;
+        //new
+        ASpell *_spell;
     protected:
     public:
         ~Warlock(void);
@@ -18,7 +22,12 @@ class Warlock {
 
         void setTitle(const std::string &title);
 
-        void introduce(void) const; 
+        void introduce(void) const;
+
+        //new
+        void learnSpell(ASpell *spell);
+        void forgetSpell(std::string spellName);
+        void launchSpell(std::string spellName, ATarget &target);
 } ;
 
 #endif

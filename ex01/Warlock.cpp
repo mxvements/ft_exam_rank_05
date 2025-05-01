@@ -21,3 +21,20 @@ void Warlock::setTitle(const std::string &title) { this->_title = title; }
 void Warlock::introduce(void) const {
 	std::cout << this->_name << ": I am " << this->_name << ", " << this->_title << "!" << std::endl;
 }
+
+//new
+
+void Warlock::learnSpell(ASpell *spell){ this->_spell = spell; }
+
+void Warlock::forgetSpell(std::string spellName)
+{
+	if (spellName == this->_spell->getName()){
+		delete this->_spell;
+	}
+}
+
+void Warlock::launchSpell(std::string spellName, ATarget &target){
+	if (spellName == this->_spell->getName()){
+		this->_spell->launch(target);
+	}
+}

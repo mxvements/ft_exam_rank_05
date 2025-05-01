@@ -1,7 +1,7 @@
 #include "Warlock.hpp"
 
 /**
- * c++ -Wall -Wextra -Werror Warlock.cpp main.cpp
+ * c++ -Wall -Wextra -Werror -std=c++98 Warlock.cpp main.cpp
  */
 int main()
 {
