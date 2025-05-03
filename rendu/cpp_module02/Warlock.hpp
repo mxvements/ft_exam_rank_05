@@ -5,13 +5,15 @@
 # include <iostream>
 #include "Fwoosh.hpp"
 #include "Dummy.hpp"
+# include "SpellBook.hpp"
+
 
 class Warlock {
     private:
         std::string _name;
         std::string _title;
         //new
-        ASpell *_spell;
+        SpellBook _book;
     protected:
     public:
         ~Warlock(void);
