@@ -1,7 +1,12 @@
 #include "SpellBook.hpp"
 #include  "ASpell.hpp"
 
-SpellBook::~SpellBook(void){}
+SpellBook::~SpellBook(void){
+    for (std::map<std::string, ASpell*>::iterator i = this->_book.begin(); i != this->_book.end(); i++){
+		if (i->second)
+			delete (i->second);
+	}
+}
 
 SpellBook::SpellBook(void){}
 

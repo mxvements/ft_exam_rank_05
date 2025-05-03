@@ -4,10 +4,14 @@
 
 Warlock::~Warlock(void)
 {
+	for (std::map<std::string, ASpell*>::iterator i = this->_book.begin(); i != this->_book.end(); i++){
+		if (i->second)
+			delete (i->second);
+	}
 	std::cout << this->_name << " My job here is done!" << std::endl;
 }
 
-Warlock::Warlock(std::string name, std::string title) : _name(name), _title(title), _spell(NULL)
+Warlock::Warlock(std::string name, std::string title) : _name(name), _title(title)
 {
 	std::cout << this->_name << ": This looks like another boring day." << std::endl;
 }
@@ -25,27 +29,31 @@ void Warlock::introduce(void) const
 
 // new
 
-void Warlock::learnSpell(ASpell *spell) { this->_spell = spell->clone(); }
+void Warlock::learnSpell(ASpell *spell)
+{
+	if (!spell)
+		return;
+	std::string name = spell->getName();
+	std::pair<std::string, ASpell *> pair(name, spell->clone());
+	this->_book.insert(pair);
+}
 
 void Warlock::forgetSpell(std::string spellName)
 {
-	if (this->_spell == NULL)
-		return;
-	std::string saved = this->_spell->getName();
-	if (spellName == saved)
+	std::map<std::string, ASpell *>::iterator i = this->_book.find(spellName);
+	if (spellName == i->first)
 	{
-		delete this->_spell;
-		this->_spell = NULL;
+		delete i->second;
+		i->second = NULL;
+		this->_book.erase(i->first);
 	}
 }
 
 void Warlock::launchSpell(std::string spellName, ATarget &target)
 {
-	if (this->_spell == NULL)
-		return;
-	std::string saved = this->_spell->getName();
-	if (spellName == saved)
+	std::map<std::string, ASpell *>::iterator i = this->_book.find(spellName);
+	if (spellName == i->first)
 	{
-		this->_spell->launch(target);
+		i->second->launch(target);
 	}
 }

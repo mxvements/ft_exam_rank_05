@@ -3,6 +3,8 @@
 
 # include <string>
 # include <iostream>
+# include <map>
+# include <algorithm>
 #include "Fwoosh.hpp"
 #include "Dummy.hpp"
 
@@ -11,7 +13,7 @@ class Warlock {
         std::string _name;
         std::string _title;
         //new
-        ASpell *_spell;
+        std::map<std::string,ASpell *> _book;
     protected:
     public:
         ~Warlock(void);

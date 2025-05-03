@@ -11,7 +11,7 @@ class ATarget;
 
 class TargetGenerator  {
     private:
-        std::map<std::string, ATarget*> _targetTypes;
+        std::map<std::string, ATarget*> _generator;
     public:
         ~TargetGenerator(void);
         TargetGenerator(void);
