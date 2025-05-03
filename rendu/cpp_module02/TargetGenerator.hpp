@@ -15,8 +15,8 @@ class TargetGenerator  {
     public:
         ~TargetGenerator(void);
         TargetGenerator(void);
-        TargetGenerator(const TargetGenerator &src);
-        TargetGenerator &operator=(const TargetGenerator &src);
+        // TargetGenerator(const TargetGenerator &src);
+        // TargetGenerator &operator=(const TargetGenerator &src);
 
         void learnTargetType(ATarget *target);
         void forgetTargetType(std::string const &type);

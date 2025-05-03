@@ -9,22 +9,22 @@ TargetGenerator::~TargetGenerator(void)
     }
 }
 TargetGenerator::TargetGenerator(void) {}
-TargetGenerator::TargetGenerator(const TargetGenerator &src)
-{
-    *this = src;
-}
-TargetGenerator &TargetGenerator::operator=(const TargetGenerator &src)
-{
-    if (this != &src)
-    {
-        for (std::map<std::string, ATarget *>::const_iterator i = src._generator.begin(); i != src._generator.end(); i++)
-        {
-            std::pair<std::string, ATarget *> pair(i->first, i->second);
-            this->_generator.insert(pair);
-        }
-    }
-    return (*this);
-}
+// TargetGenerator::TargetGenerator(const TargetGenerator &src)
+// {
+//     *this = src;
+// }
+// TargetGenerator &TargetGenerator::operator=(const TargetGenerator &src)
+// {
+//     if (this != &src)
+//     {
+//         for (std::map<std::string, ATarget *>::const_iterator i = src._generator.begin(); i != src._generator.end(); i++)
+//         {
+//             std::pair<std::string, ATarget *> pair(i->first, i->second);
+//             this->_generator.insert(pair);
+//         }
+//     }
+//     return (*this);
+// }
 
 void TargetGenerator::learnTargetType(ATarget *target)
 {
