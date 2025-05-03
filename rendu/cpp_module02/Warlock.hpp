@@ -3,8 +3,8 @@
 
 # include <string>
 # include <iostream>
-#include "ASpell.hpp"
-#include "ATarget.hpp"
+#include "Fwoosh.hpp"
+#include "Dummy.hpp"
 
 class Warlock {
     private:

@@ -4,7 +4,7 @@
 
 Warlock::~Warlock(void)
 {
-	std::cout << this->_name << " My job here is done!" << std::endl;
+	std::cout << this->_name << ": My job here is done!" << std::endl;
 }
 
 Warlock::Warlock(std::string name, std::string title) : _name(name), _title(title)
