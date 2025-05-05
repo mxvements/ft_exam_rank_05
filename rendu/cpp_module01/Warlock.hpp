@@ -12,8 +12,11 @@ class Warlock {
     private:
         std::string _name;
         std::string _title;
-        //new
         std::map<std::string,ASpell *> _book;
+
+        Warlock(const Warlock &src);
+        Warlock &operator=(const Warlock &src);
+        
     protected:
     public:
         ~Warlock(void);

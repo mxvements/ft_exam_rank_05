@@ -8,6 +8,9 @@ class Warlock {
     private:
         std::string _name;
         std::string _title;
+
+        Warlock(const Warlock &src);
+        Warlock &operator=(const Warlock &src);
     protected:
     public:
         ~Warlock(void);

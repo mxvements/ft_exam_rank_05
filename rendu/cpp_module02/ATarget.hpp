@@ -11,6 +11,9 @@ class ATarget
 private:
 	std::string _type;
 
+	ATarget(const ATarget &src);
+	ATarget &operator=(const ATarget &src);
+
 public:
 	virtual ~ATarget();
 	ATarget(std::string type);

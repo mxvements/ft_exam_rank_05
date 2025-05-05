@@ -1,6 +1,5 @@
 #include "Warlock.hpp"
 
-/* coplien's form ----------------------------------------------------------- */
 
 Warlock::~Warlock(void)
 {

@@ -1,7 +1,5 @@
 #include "Warlock.hpp"
 
-/* coplien's form ----------------------------------------------------------- */
-
 Warlock::~Warlock(void)
 {
 	std::cout << this->_name << ": My job here is done!" << std::endl;
@@ -22,8 +20,6 @@ void Warlock::introduce(void) const
 {
 	std::cout << this->_name << ": I am " << this->_name << ", " << this->_title << "!" << std::endl;
 }
-
-// new
 
 void Warlock::learnSpell(ASpell *spell)
 {

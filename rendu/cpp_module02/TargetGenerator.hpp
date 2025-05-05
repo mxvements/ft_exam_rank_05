@@ -12,11 +12,12 @@ class ATarget;
 class TargetGenerator  {
     private:
         std::map<std::string, ATarget*> _generator;
+        
+        TargetGenerator(const TargetGenerator &src);
+        TargetGenerator &operator=(const TargetGenerator &src);
     public:
         ~TargetGenerator(void);
         TargetGenerator(void);
-        // TargetGenerator(const TargetGenerator &src);
-        // TargetGenerator &operator=(const TargetGenerator &src);
 
         void learnTargetType(ATarget *target);
         void forgetTargetType(std::string const &type);

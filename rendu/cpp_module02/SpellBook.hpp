@@ -10,6 +10,9 @@ class ASpell ;
 class SpellBook {
     private:
         std::map<std::string, ASpell *> _book;
+
+        SpellBook(const SpellBook &src);
+        SpellBook &operator=(const SpellBook &src);
         
     public:
         ~SpellBook(void);
