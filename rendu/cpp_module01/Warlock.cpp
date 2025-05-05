@@ -8,6 +8,7 @@ Warlock::~Warlock(void)
 		if (i->second)
 			delete (i->second);
 	}
+	_book.clear();
 	std::cout << this->_name << " My job here is done!" << std::endl;
 }
 

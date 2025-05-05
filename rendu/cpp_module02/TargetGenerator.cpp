@@ -7,6 +7,7 @@ TargetGenerator::~TargetGenerator(void)
         if (i->second)
             delete (i->second);
     }
+    _generator.clear();
 }
 TargetGenerator::TargetGenerator(void) {}
 // TargetGenerator::TargetGenerator(const TargetGenerator &src)
@@ -32,7 +33,7 @@ void TargetGenerator::learnTargetType(ATarget *target)
     std::map<std::string, ATarget *>::iterator el = this->_generator.lower_bound(type);
     if (el->first != type)
     {
-        std::pair<std::string, ATarget *> pair(type, target);
+        std::pair<std::string, ATarget *> pair(type, target->clone());
         this->_generator.insert(pair);
     }
 }

@@ -6,6 +6,7 @@ SpellBook::~SpellBook(void){
 		if (i->second)
 			delete (i->second);
 	}
+    _book.clear();
 }
 
 SpellBook::SpellBook(void){}
