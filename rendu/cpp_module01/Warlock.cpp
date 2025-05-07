@@ -35,7 +35,7 @@ void Warlock::learnSpell(ASpell *spell)
 	if (!spell)
 		return;
 	std::string name = spell->getName();
-	std::pair<std::string, ASpell *> pair(name, spell->clone());
+	std::pair<std::string, ASpell *> pair(name, spell);
 	this->_book.insert(pair);
 }
 

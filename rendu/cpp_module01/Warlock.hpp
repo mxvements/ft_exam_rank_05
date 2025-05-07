@@ -8,6 +8,8 @@
 #include "Fwoosh.hpp"
 #include "Dummy.hpp"
 
+using namespace std;
+
 class Warlock {
     private:
         std::string _name;

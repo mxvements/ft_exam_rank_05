@@ -18,7 +18,7 @@ void SpellBook::learnSpell(ASpell *src){
     std::map<std::string, ASpell*>::iterator i = this->_book.find(name);
     if (name != i->first)
     {
-        std::pair<std::string, ASpell*> pair(name, src->clone());
+        std::pair<std::string, ASpell*> pair(name, src);
         this->_book.insert(pair);
     }
 }

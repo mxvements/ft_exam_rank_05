@@ -7,7 +7,7 @@
 #include "TargetGenerator.hpp"
 
 /**
- * c++ -std=c++98 -Werror -Wall -Wextra Warlock.cpp ASpell.cpp ATarget.cpp Fwoosh.cpp Dummy.cpp Fireball.cpp Polymorph.cpp BrickWall.cpp TargetGenerator.cpp main.cpp
+ * c++ -std=c++98 -Werror -Wall -Wextra Warlock.cpp ASpell.cpp ATarget.cpp Fwoosh.cpp Dummy.cpp Fireball.cpp Polymorph.cpp BrickWall.cpp SpellBook.cpp TargetGenerator.cpp main.cpp
  */
 int main()
 {
@@ -30,8 +30,4 @@ int main()
   richard.introduce();
   richard.launchSpell("Polymorph", *wall);
   richard.launchSpell("Fireball", *wall);
-
-  //mines
-  delete polymorph;
-  delete fireball;
 }
